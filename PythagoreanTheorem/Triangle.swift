@@ -67,8 +67,8 @@ class Triangle {
         
         let sizeRatio = max(heightRatio, widthRatio)
         
-        let width = CGFloat(self.b) / sizeRatio
-        let height = CGFloat(self.a) / sizeRatio
+        let width = (CGFloat(self.b) / sizeRatio) - lineWidth - 10
+        let height = (CGFloat(self.a) / sizeRatio) - lineWidth - 10
         
         let shapePath = UIBezierPath()
         let startingPoint = CGPoint(x: (bounds.width - width)/2.0 + 10 + lineWidth,
@@ -76,8 +76,8 @@ class Triangle {
         shapePath.lineWidth = lineWidth
         
         shapePath.move(to: startingPoint)
-        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x, y: shapePath.currentPoint.y + CGFloat(self.a)))
-        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x + CGFloat(self.b), y: shapePath.currentPoint.y))
+        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x, y: height))
+        shapePath.addLine(to: CGPoint(x: width, y: shapePath.currentPoint.y))
         shapePath.addLine(to: startingPoint)
         
         self.shapePath = shapePath
