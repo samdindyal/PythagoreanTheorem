@@ -122,6 +122,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="aField" destination="6te-xy-XTF" id="enR-WI-h1n"/>
+                        <outlet property="bField" destination="SpR-8m-dFR" id="o0W-R3-BAT"/>
+                        <outlet property="cField" destination="2Nc-zC-iER" id="jEg-ny-KXO"/>
+                        <outlet property="canvas" destination="leA-xv-WYi" id="2mP-Cd-kdi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
