@@ -15,4 +15,13 @@ class PythagoreanTheoremController: UIViewController {
     
     @IBOutlet var canvas:DrawView!
     
+    var triangle:Triangle!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        canvas.triangle = self.triangle
+        canvas.setNeedsDisplay()
+    }
 }
