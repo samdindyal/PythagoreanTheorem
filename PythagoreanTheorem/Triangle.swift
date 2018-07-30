@@ -14,11 +14,9 @@ class Triangle {
     var b:Float
     var c:Float
     
-    var shapePaths: [UIBezierPath]
+    var shapePath: UIBezierPath
     
     var bounds: CGRect!
-    
-    var formulae: [String : String] = []
     
     
     init(a: Float, b: Float, c: Float) {
@@ -26,17 +24,17 @@ class Triangle {
         self.b = b
         self.c = c
         
-        self.shapePaths = []
+        self.shapePath = UIBezierPath()
     }
     
     func recalculateSides(a:Float) {
         self.a = a
-        self.c = sqrt(powf(self.a, 2), powf(self.b, 2))
+        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
     }
     
     func recalculateSides(b:Float) {
         self.b = b
-        self.c = sqrt(powf(self.a, 2) + powf(self.b, 2))
+        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
     }
     
     func recalculateSides(c:Float, b:Float) {
@@ -46,26 +44,28 @@ class Triangle {
         self.a = sqrtf(powf(self.c, 2) - powf(self.b, 2))    }
     
     func calculateShapePaths(bounds: CGRect) {
-        var shapePaths:[UIBezierPath] = []
         
         let lineWidth:CGFloat = 5.0
         
-        let heightRatio = self.a / Float(bounds.height)
-        let widthRatio = self.b / Float(bounds.width)
+        let heightRatio = CGFloat(self.a) / bounds.height
+        let widthRatio = CGFloat(self.b) / bounds.width
         
         let sizeRatio = max(heightRatio, widthRatio)
         
+        let width = CGFloat(self.b) / sizeRatio
+        let height = CGFloat(self.a) / sizeRatio
         
-        let width = CGFloat(self.b / sizeRatio) - lineWidth - 10.0
-        let height = CGFloat(self.a / sizeRatio) - lineWidth - 10.0
-        let x = (bounds.width - CGFloat(width)) / 2.0
-        let y = (bounds.height - CGFloat(height)) / 2.0
-        
-        let shapePath = UIBezierPath(CGRect(x: x, y: y, width: width, height: height))
+        let shapePath = UIBezierPath()
+        let startingPoint = CGPoint(x: (bounds.width - width)/2.0 + 10 + lineWidth,
+                                    y: (bounds.height - height) + 10 + lineWidth)
         shapePath.lineWidth = lineWidth
-        shapePaths.append(shapePath)
         
-        self.shapePaths = shapePaths
+        shapePath.move(to: startingPoint)
+        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x, y: shapePath.currentPoint.y + CGFloat(self.a)))
+        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x + CGFloat(self.b), y: shapePath.currentPoint.y))
+        shapePath.addLine(to: startingPoint)
+        
+        self.shapePath = shapePath
         self.bounds = bounds
     }
     
