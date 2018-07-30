@@ -10,8 +10,18 @@ import UIKit
 
 class Triangle {
     
-    var a:Float
-    var b:Float
+    var a:Float {
+        didSet {
+            recalculateSides()
+        }
+    }
+    
+    var b:Float {
+        didSet {
+            recalculateSides()
+        }
+    }
+    
     var c:Float
     
     var shapePath: UIBezierPath
@@ -19,12 +29,17 @@ class Triangle {
     var bounds: CGRect!
     
     
-    init(a: Float, b: Float, c: Float) {
+    init(a: Float, b: Float) {
         self.a = a
         self.b = b
-        self.c = c
+        
+        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
         
         self.shapePath = UIBezierPath()
+    }
+    
+    func recalculateSides() {
+        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
     }
     
     func recalculateSides(a:Float) {
