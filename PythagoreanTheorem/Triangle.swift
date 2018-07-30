@@ -52,11 +52,21 @@ class Triangle {
         self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
     }
     
-    func recalculateSides(c:Float, b:Float) {
+    func recalculateSides(a:Float, c:Float) {
+        self.c = c
+        self.a = a
+        
+        self.a = sqrtf(powf(self.c, 2) - powf(self.a, 2))
+        
+    }
+    
+    func recalculateSides(b:Float, c:Float) {
         self.c = c
         self.b = b
         
-        self.a = sqrtf(powf(self.c, 2) - powf(self.b, 2))    }
+        self.a = sqrtf(powf(self.c, 2) - powf(self.b, 2))
+        
+    }
     
     func calculateShapePaths(bounds: CGRect) {
         
