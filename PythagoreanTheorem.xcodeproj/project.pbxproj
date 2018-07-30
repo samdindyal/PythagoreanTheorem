@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		587A59A0210F77730081AF17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A599F210F77730081AF17 /* AppDelegate.swift */; };
-		587A59A2210F77730081AF17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A59A1210F77730081AF17 /* ViewController.swift */; };
 		587A59A5210F77730081AF17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587A59A3210F77730081AF17 /* Main.storyboard */; };
 		587A59A7210F77740081AF17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587A59A6210F77740081AF17 /* Assets.xcassets */; };
 		587A59AA210F77740081AF17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587A59A8210F77740081AF17 /* LaunchScreen.storyboard */; };
+		587A59B2210FBB110081AF17 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A59B1210FBB110081AF17 /* DrawView.swift */; };
+		587A59B8210FBF410081AF17 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A59B7210FBF410081AF17 /* Triangle.swift */; };
+		587A59BA210FCA840081AF17 /* PythagoreanTheoremController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A59B9210FCA840081AF17 /* PythagoreanTheoremController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		587A599C210F77730081AF17 /* PythagoreanTheorem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythagoreanTheorem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587A599F210F77730081AF17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		587A59A1210F77730081AF17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		587A59A4210F77730081AF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		587A59A6210F77740081AF17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		587A59A9210F77740081AF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		587A59AB210F77740081AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587A59B1210FBB110081AF17 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		587A59B7210FBF410081AF17 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		587A59B9210FCA840081AF17 /* PythagoreanTheoremController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythagoreanTheoremController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 		587A599E210F77730081AF17 /* PythagoreanTheorem */ = {
 			isa = PBXGroup;
 			children = (
+				587A59B9210FCA840081AF17 /* PythagoreanTheoremController.swift */,
+				587A59B7210FBF410081AF17 /* Triangle.swift */,
 				587A599F210F77730081AF17 /* AppDelegate.swift */,
-				587A59A1210F77730081AF17 /* ViewController.swift */,
 				587A59A3210F77730081AF17 /* Main.storyboard */,
+				587A59B1210FBB110081AF17 /* DrawView.swift */,
 				587A59A6210F77740081AF17 /* Assets.xcassets */,
 				587A59A8210F77740081AF17 /* LaunchScreen.storyboard */,
 				587A59AB210F77740081AF17 /* Info.plist */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				587A59A2210F77730081AF17 /* ViewController.swift in Sources */,
 				587A59A0210F77730081AF17 /* AppDelegate.swift in Sources */,
+				587A59B8210FBF410081AF17 /* Triangle.swift in Sources */,
+				587A59B2210FBB110081AF17 /* DrawView.swift in Sources */,
+				587A59BA210FCA840081AF17 /* PythagoreanTheoremController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
