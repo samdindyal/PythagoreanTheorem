@@ -44,6 +44,11 @@ class PythagoreanTheoremController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        self.aField.resignFirstResponder()
+        self.bField.resignFirstResponder()
+    }
+    
     var triangle:Triangle! {
         didSet {
             if let canvas = self.canvas {

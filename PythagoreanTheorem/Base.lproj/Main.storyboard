@@ -112,6 +112,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qxY-P7-oiK" secondAttribute="trailing" id="8yt-49-6a0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ktl-77-br4" secondAttribute="trailing" constant="8" id="EtY-Gn-w6m"/>
@@ -129,6 +130,9 @@
                             <constraint firstItem="qxY-P7-oiK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="ygb-RY-wB1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SAm-Iw-rGK" appends="YES" id="uLv-Xs-8Lz"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="aField" destination="6te-xy-XTF" id="enR-WI-h1n"/>
@@ -138,6 +142,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SAm-Iw-rGK">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="D17-Y0-TtU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
