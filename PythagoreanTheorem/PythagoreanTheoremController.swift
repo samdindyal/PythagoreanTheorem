@@ -11,11 +11,37 @@ import UIKit
 class PythagoreanTheoremController: UIViewController {
     @IBOutlet var aField:UITextField!
     @IBOutlet var bField:UITextField!
-    @IBOutlet var cField:UITextField!
+    
+    @IBOutlet var cLabel:UILabel!
     
     @IBOutlet var canvas:DrawView!
     
-    var triangle:Triangle!
+    @IBAction func aFieldChanged(_ sender: UITextField) {
+        if let triangle = self.triangle,
+            let a = Float(aField.text!) {
+            triangle.recalculateSides(a: a)
+            cLabel.text = "\(triangle.c)"
+            self.triangle = triangle
+        }
+    }
+    
+    @IBAction func bFieldChanged(_ sender: UITextField) {
+        if let triangle = self.triangle,
+            let b = Float(bField.text!) {
+            triangle.recalculateSides(b: b)
+            cLabel.text = "\(triangle.c)"
+            self.triangle = triangle
+        }
+    }
+    
+    var triangle:Triangle! {
+        didSet {
+            if let canvas = self.canvas {
+                canvas.triangle = self.triangle
+                canvas.setNeedsDisplay()
+            }
+        }
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {

@@ -56,7 +56,7 @@ class Triangle {
         self.c = c
         self.a = a
         
-        self.a = sqrtf(powf(self.c, 2) - powf(self.a, 2))
+        self.b = sqrtf(powf(self.c, 2) - powf(self.a, 2))
         
     }
     
@@ -69,28 +69,33 @@ class Triangle {
     }
     
     func calculateShapePaths(bounds: CGRect) {
+        if self.a > 0, self.b > 0, self.c > 0
+        {
+            let lineWidth:CGFloat = 5.0
         
-        let lineWidth:CGFloat = 5.0
+            let heightRatio = CGFloat(self.a) / bounds.height
+            let widthRatio = CGFloat(self.b) / bounds.width
         
-        let heightRatio = CGFloat(self.a) / bounds.height
-        let widthRatio = CGFloat(self.b) / bounds.width
+            let sizeRatio = max(heightRatio, widthRatio)
         
-        let sizeRatio = max(heightRatio, widthRatio)
+            let width = (CGFloat(self.b) / sizeRatio) - lineWidth - 10
+            let height = (CGFloat(self.a) / sizeRatio) - lineWidth - 10
         
-        let width = (CGFloat(self.b) / sizeRatio) - lineWidth - 10
-        let height = (CGFloat(self.a) / sizeRatio) - lineWidth - 10
+            let shapePath = UIBezierPath()
+            let startingPoint = CGPoint(x: (bounds.width - width)/2.0 + 10 + lineWidth,
+                                        y: (bounds.height - height) + 10 + lineWidth)
+            shapePath.lineWidth = lineWidth
         
-        let shapePath = UIBezierPath()
-        let startingPoint = CGPoint(x: (bounds.width - width)/2.0 + 10 + lineWidth,
-                                    y: (bounds.height - height) + 10 + lineWidth)
-        shapePath.lineWidth = lineWidth
+            shapePath.move(to: startingPoint)
+            shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x, y: height))
+            shapePath.addLine(to: CGPoint(x: width, y: shapePath.currentPoint.y))
+            shapePath.addLine(to: startingPoint)
         
-        shapePath.move(to: startingPoint)
-        shapePath.addLine(to: CGPoint(x: shapePath.currentPoint.x, y: height))
-        shapePath.addLine(to: CGPoint(x: width, y: shapePath.currentPoint.y))
-        shapePath.addLine(to: startingPoint)
+            self.shapePath = shapePath
+        } else {
+            self.shapePath = UIBezierPath()
+        }
         
-        self.shapePath = shapePath
         self.bounds = bounds
     }
     

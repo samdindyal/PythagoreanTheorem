@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let controller = window?.rootViewController as! PythagoreanTheoremController
-        controller.triangle = Triangle(a: 1, b: 1)
+        controller.triangle = Triangle(a: 0, b: 0)
         
         return true
     }

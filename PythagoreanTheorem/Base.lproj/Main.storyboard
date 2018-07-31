@@ -25,11 +25,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leA-xv-WYi" customClass="DrawView" customModule="PythagoreanTheorem" customModuleProvider="target">
-                                <rect key="frame" x="8" y="350" width="359" height="412"/>
+                                <rect key="frame" x="8" y="349.66666666666674" width="359" height="412.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ktl-77-br4">
-                                <rect key="frame" x="8" y="170" width="359" height="162"/>
+                                <rect key="frame" x="8" y="170" width="359" height="161.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kLy-Ya-Qj1">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="77"/>
@@ -42,6 +42,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="64"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="aFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="28M-v9-Mme"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-QR-icA">
                                                         <rect key="frame" x="94.666666666666671" y="0.0" width="25" height="77"/>
@@ -65,6 +68,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="64"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                        <connections>
+                                                            <action selector="bFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="zBU-SU-Rq8"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLv-CV-5Cn">
                                                         <rect key="frame" x="94.666666666666657" y="0.0" width="25" height="77"/>
@@ -77,22 +83,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DYz-Eq-iib">
-                                        <rect key="frame" x="0.0" y="85" width="359" height="77"/>
+                                        <rect key="frame" x="0.0" y="85" width="359" height="76.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrc-9p-zau">
-                                                <rect key="frame" x="0.0" y="0.33333333333334281" width="44.333333333333336" height="76.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="76.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="64"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="c" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nc-zC-iER">
-                                                <rect key="frame" x="48.333333333333343" y="0.0" width="281.66666666666663" height="77"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx2-jr-m9l">
+                                                <rect key="frame" x="48.333333333333343" y="0.0" width="281.66666666666663" height="76.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="64"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                            </textField>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gz0-gf-TDd">
-                                                <rect key="frame" x="334" y="0.33333333333334281" width="25" height="76.666666666666671"/>
+                                                <rect key="frame" x="334" y="0.0" width="25" height="76.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="64"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -125,7 +131,7 @@
                     <connections>
                         <outlet property="aField" destination="6te-xy-XTF" id="enR-WI-h1n"/>
                         <outlet property="bField" destination="SpR-8m-dFR" id="o0W-R3-BAT"/>
-                        <outlet property="cField" destination="2Nc-zC-iER" id="jEg-ny-KXO"/>
+                        <outlet property="cLabel" destination="rx2-jr-m9l" id="e1H-fc-Jzj"/>
                         <outlet property="canvas" destination="leA-xv-WYi" id="2mP-Cd-kdi"/>
                     </connections>
                 </viewController>
