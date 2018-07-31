@@ -44,6 +44,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <action selector="aFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="28M-v9-Mme"/>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="D1w-24-svN"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-QR-icA">
@@ -70,6 +71,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
                                                             <action selector="bFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="zBU-SU-Rq8"/>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="k7x-Pf-pe4"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="²" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLv-CV-5Cn">

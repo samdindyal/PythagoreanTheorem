@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PythagoreanTheoremController: UIViewController {
+class PythagoreanTheoremController: UIViewController, UITextFieldDelegate {
     @IBOutlet var aField:UITextField!
     @IBOutlet var bField:UITextField!
     
@@ -59,5 +59,15 @@ class PythagoreanTheoremController: UIViewController {
         
         canvas.triangle = self.triangle
         canvas.setNeedsDisplay()
+    }
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let existingTextHasSeparator = textField.text?.range(of: ".")
+        let replacementTextHasSeparator = string.range(of: ".")
+        
+        return existingTextHasSeparator == nil || replacementTextHasSeparator == nil
     }
 }
