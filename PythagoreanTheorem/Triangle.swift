@@ -57,8 +57,8 @@ class Triangle {
             let height = (CGFloat(self.a) / sizeRatio) - lineWidth - 10
         
             let shapePath = UIBezierPath()
-            let startingPoint = CGPoint(x: (bounds.width - width)/2.0 + 10 + lineWidth,
-                                        y: (bounds.height - height) + 10 + lineWidth)
+            let startingPoint = CGPoint(x: (bounds.width - width - 10 - lineWidth)/2.0 ,
+                                        y: (bounds.height - height - 10 - lineWidth)/2.0 )
             shapePath.lineWidth = lineWidth
         
             shapePath.move(to: startingPoint)
