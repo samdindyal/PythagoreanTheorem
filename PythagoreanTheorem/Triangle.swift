@@ -42,31 +42,6 @@ class Triangle {
         self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
     }
     
-    func recalculateSides(a:Float) {
-        self.a = a
-        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
-    }
-    
-    func recalculateSides(b:Float) {
-        self.b = b
-        self.c = sqrtf(powf(self.a, 2) + powf(self.b, 2))
-    }
-    
-    func recalculateSides(a:Float, c:Float) {
-        self.c = c
-        self.a = a
-        
-        self.b = sqrtf(powf(self.c, 2) - powf(self.a, 2))
-        
-    }
-    
-    func recalculateSides(b:Float, c:Float) {
-        self.c = c
-        self.b = b
-        
-        self.a = sqrtf(powf(self.c, 2) - powf(self.b, 2))
-        
-    }
     
     func calculateShapePaths(bounds: CGRect) {
         if self.a > 0, self.b > 0, self.c > 0
