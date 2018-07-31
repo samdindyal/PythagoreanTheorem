@@ -18,7 +18,8 @@ class PythagoreanTheoremController: UIViewController {
     
     @IBAction func aFieldChanged(_ sender: UITextField) {
         if let triangle = self.triangle {
-            if let a = Float(aField.text!) {
+            if let a = Float(aField.text!),
+                a > 0 {
                 triangle.a = a
                 cLabel.text = "\(triangle.c)"
             } else {
@@ -31,7 +32,8 @@ class PythagoreanTheoremController: UIViewController {
     
     @IBAction func bFieldChanged(_ sender: UITextField) {
         if let triangle = self.triangle {
-            if let b = Float(bField.text!) {
+            if let b = Float(bField.text!),
+                b > 0 {
                 triangle.b = b
                 cLabel.text = "\(triangle.c)"
             } else {
